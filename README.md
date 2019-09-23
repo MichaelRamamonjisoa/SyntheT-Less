@@ -28,7 +28,7 @@ python3 call_blender_multi.py --blender_path BLENDER_PATH \
 ```
 
 # Citation
-If you use our data generation code or already generated data, please our paper:
+If you use our data generation code or already generated data, please cite our paper:
 
 ```
 @article{pitteri2019threedv, 
