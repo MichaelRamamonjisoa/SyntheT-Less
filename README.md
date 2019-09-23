@@ -1,7 +1,13 @@
 # SyntheT-Less
-Official repository for the SyntheT-Less dataset
+Official repository for the SyntheT-Less dataset 
+
+used in *On Object Symmetries and 6D Pose Estimation from Images*, G. Pitteri\*, M. Ramamonjisoa\*, S. Ilic and V. Lepetit
 
 ![alt_text](animated_samples.gif)
+
+
+# Download our data
+The data is available [here](https://drive.google.com/open?id=1VCYiN4truBKsYwAUlgn1td_TUZL8qyD0) (9.6GB zip file).
 
 # Data Generation code
 
