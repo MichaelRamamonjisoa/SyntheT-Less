@@ -78,7 +78,7 @@ def process_chunk(index_list, args):
         table_image_idx = np.random.randint(len(table_image_list))
         table_image = os.path.join(args.dtd_rootdir, table_image_list[table_image_idx])
 
-        background = '--background' #set to empty string to debug in blender
+        background = '' #set to empty string to debug in blender
         no_cuda = ' --nocuda ' if args.nocuda else ''
 
         outdir = 'multi_objects'

@@ -262,7 +262,7 @@ def set_scene(cad_path, num_objects=1, plane_image_path='',
     bpy.context.scene.frame_current = 49
     bpy.context.scene.frame_set(49)
 
-    big_success = True
+    success = True
 
     # because applying bpy.ops.transform.resize does not work as expected when rigid bodies are on...
     for obj in bpy.data.objects:
@@ -275,15 +275,15 @@ def set_scene(cad_path, num_objects=1, plane_image_path='',
 
         for trans in t:
             if np.abs(trans) > 10:
-                big_success = False
+                success = False
 
-        if big_success is True:
+        if success is True:
             bpy.ops.rigidbody.object_remove()
             # because blender resets everything when removing rigid body...
             bpy.context.object.rotation_euler = r
             bpy.context.object.location = t
 
-    if big_success:
+    if success:
 
         # get barycenter point
         bpy.ops.object.select_all(action='SELECT')
