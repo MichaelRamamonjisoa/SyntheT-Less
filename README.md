@@ -9,6 +9,45 @@ used in *On Object Symmetries and 6D Pose Estimation from Images*, G. Pitteri\*,
 # Download our data
 The data is available [here](https://drive.google.com/open?id=1VCYiN4truBKsYwAUlgn1td_TUZL8qyD0) (9.6GB zip file).
 
+# Dataset structure
+Here is how the dataset is organised:
+
+```
+multi_objects/
+|__images
+    |__ img_xxxxx.png
+|__contours/
+    |__ xxxxx.png
+|__depth/
+    |__ xxxxx.png                         
+|__normals
+    |__ xxxxx.png
+|__mask
+    |__ xxxxx.png
+|__instances
+    |__ xxxxx.png --> uint8 image containing object labels from 1 to 9 (background pixels are annotated with 0) 
+|__gt_poses/
+    |__ tmp_xxxxx.json --> contains a dictionnary of object poses with keys annotated from 0 to 8 
+                           (There is a 1-shift from object instances indices, sorry about that!)
+        {
+         "0": {"Euler": [theta_x, theta_y, theta_z],
+               "T": [Tx, Ty, Tz],
+               "type": object type from T-LESS (from 1 to 30)},              
+         ...
+                  
+         "8": {"Euler": [theta_x, theta_y, theta_z],
+               "T": [Tx, Ty, Tz],
+               "type": object type from T-LESS (from 1 to 30)},
+         "Lamp": {"phi": lamp_phi, 
+                  "theta": lamp_theta,
+                  "strength": lamp_strength
+                  "Ambient Light": ambient occlusion level (0 to 1)
+                  "Table": {"distance": distance in meters,
+                            "Euler": [theta_table_x, theta_table_y, theta_table_z]}
+         }   
+
+```
+
 # Data Generation 
 
 ## Requirements
@@ -61,43 +100,6 @@ Variables:
 - $CUDA_DEVICE: GPU ID for data generation
 
 Call **python3 call_blender_multi.py --help** for help on other parameters.
-
-## Dataset structure
-```
-multi_objects/
-|__images
-    |__ img_xxxxx.png
-|__contours/
-    |__ xxxxx.png
-|__depth/
-    |__ xxxxx.png                         
-|__normals
-    |__ xxxxx.png
-|__mask
-    |__ xxxxx.png
-|__instances
-    |__ xxxxx.png --> uint8 image containing object labels from 1 to 9 (background pixels are annotated with 0) 
-|__gt_poses/
-    |__ tmp_xxxxx.json --> contains a dictionnary of object poses with keys annotated from 0 to 8 
-                           (There is a 1-shift from object instances indices, sorry about that!)
-        {
-         "0": {"Euler": [theta_x, theta_y, theta_z],
-               "T": [Tx, Ty, Tz],
-               "type": object type from T-LESS (from 1 to 30)},              
-         ...
-                  
-         "8": {"Euler": [theta_x, theta_y, theta_z],
-               "T": [Tx, Ty, Tz],
-               "type": object type from T-LESS (from 1 to 30)},
-         "Lamp": {"phi": lamp_phi, 
-                  "theta": lamp_theta,
-                  "strength": lamp_strength
-                  "Ambient Light": ambient occlusion level (0 to 1)
-                  "Table": {"distance": distance in meters,
-                            "Euler": [theta_table_x, theta_table_y, theta_table_z]}
-         }   
-
-```
 
 # Citation
 If you use our data generation code or already generated data, please cite our paper:
