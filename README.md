@@ -55,25 +55,29 @@ multi_objects/
 Download the [Describable Textures Dataset (DTD)](https://www.robots.ox.ac.uk/~vgg/data/dtd/) and set its folder using:
 
 ```
-cd DTD
-wget https://www.robots.ox.ac.uk/~vgg/data/dtd/ -O && unzip dtd-r1.0.1.tar.gz && cd .. 
+cd DTD && \
+wget https://www.robots.ox.ac.uk/~vgg/data/dtd/download/dtd-r1.0.1.tar.gz && \
+tar -xf dtd-r1.0.1.tar.gz --strip-components=1 && cd .. &&\ 
 rm -rf DTD/dtd-r1.0.1.tar.gz
 ```
 
-### 2. Download the T-Less CAD models
+### 2. Download the T-LESS CAD models
+Download the [T-LESS](http://cmp.felk.cvut.cz/t-less/index.html) CAD models:
 ```
-wget http://ptak.felk.cvut.cz/darwin/t-less/v2/t-less_v2_models_cad.zip
-unzip t-less_v2_models_cad.zip  
+wget http://ptak.felk.cvut.cz/darwin/t-less/v2/t-less_v2_models_cad.zip && \
+unzip t-less_v2_models_cad.zip && \  
+rm -rf t-less_v2_models_cad.zip
 ```
 
 ### 3. Install Blender
-These commands will install [Blender](https://www.blender.org/download/Blender2.80/blender-2.80-linux-glibc217-x86_64.tar.bz2/)
- and set it to the correct path. Skip this step if you have already installed Blender.
+Download [Blender](https://www.blender.org/download/Blender2.80/blender-2.80-linux-glibc217-x86_64.tar.bz2)
+ and save it to the *Blender/* path. using the following commands (skip this step if you have previously installed Blender).
 
 ```
-wget https://www.blender.org/download/Blender2.80/blender-2.80-linux-glibc217-x86_64.tar.bz2/  
+mv ABSOLUTE_PATH_WHERE_FILE_WAS_DOWNLOADED.tar.bz2 ROOT_OF_THIS_DIRECTORY 
 bzip2 -d blender-2.80-linux-glibc217-x86_64.tar.bz2
 mkdir blender && tar -xf blender-2.80-linux-glibc217-x86_64.tar -C blender/ --strip-components=1
+rm -rf blender-2.80-linux-glibc217-x86_64.tar
 ```
 
 ## Run the generation code
@@ -94,7 +98,7 @@ python3 call_blender_multi.py --blender_path $BLENDER_PATH \
 
 Variables:
 
-- $BLENDER_PATH: Path to the directory containing your Blender executable (use Blender/ if installed with step 3)
+- $BLENDER_PATH: Path to the directory containing your Blender executable (use blender/ if installed with step 3)
 - $NUM_CPUS: Number of processes to run data generation in parallel. We recommand setting it to your machine CPUs number.  
 - $DATASET_SIZE: Aimed dataset size
 - $CUDA_DEVICE: GPU ID for data generation
