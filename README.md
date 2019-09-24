@@ -85,8 +85,13 @@ rm -rf blender-2.80-linux-glibc217-x86_64.tar
 Make sure you have installed the following requirements:
 - [Blender](https://www.blender.org/download/Blender2.80/blender-2.80-linux-glibc217-x86_64.tar.bz2/) (in previous step)
 - OpenCV
-- OpenEXR
-- imageio
+- OpenEXR 
+- imageio 
+- skimage 
+- multiprocessing 
+- imath
+
+Most of them can be installed using *pip install "package_name"*  
 
 Then run:
 ```
