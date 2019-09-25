@@ -40,10 +40,10 @@ multi_objects/
                "type": object type from T-LESS (from 1 to 30)},
          "Lamp": {"phi": lamp_phi, 
                   "theta": lamp_theta,
-                  "strength": lamp_strength
-                  "Ambient Light": ambient occlusion level (0 to 1)
-                  "Table": {"distance": distance in meters,
-                            "Euler": [theta_table_x, theta_table_y, theta_table_z]}
+                  "strength": lamp_strength}
+	  "Ambient Light": ambient occlusion level (0 to 1)
+	  "Table": {"distance": distance in meters,
+		    "Euler": [theta_table_x, theta_table_y, theta_table_z]}
          }   
 
 ```
