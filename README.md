@@ -1,7 +1,7 @@
 # SyntheT-Less
 Official repository for the SyntheT-Less dataset 
 
-used in *On Object Symmetries and 6D Pose Estimation from Images*, G. Pitteri\*, M. Ramamonjisoa\*, S. Ilic and V. Lepetit
+used in *On Object Symmetries and 6D Pose Estimation from Images*, G. Pitteri\*, [M. Ramamonjisoa](https://michaelramamonjisoa.github.io)\*, S. Ilic and V. Lepetit
 
 ![alt_text](animated_samples.gif)
 
