@@ -7,7 +7,7 @@ used in *On Object Symmetries and 6D Pose Estimation from Images*, G. Pitteri\*,
 
 
 # Download our data
-The data is available [here](https://drive.google.com/open?id=1VCYiN4truBKsYwAUlgn1td_TUZL8qyD0) (9.6GB zip file).
+The data is available [here](https://drive.google.com/file/d/1abMrFVqa3e39q0hBUD5jikAAIx2wmn0K/view?usp=sharing) (9.6GB zip file).
 
 # Dataset structure
 Here is how the dataset is organised:
